@@ -5,9 +5,9 @@ from os import listdir
 import json
 
 
-DIALOG_PATH = "../dialog/"
+DIALOG_PATH = "./dialog/"
 DIALOG_FILES = [ x for x in listdir(DIALOG_PATH) if x.lower().endswith('.ogg')]
-REPLICA_CONFIG_FILENAME = "./replica_config.json"
+REPLICA_CONFIG_FILENAME = "./replica_dialog_generator/replica_config.json"
 
 
 class Dialog:

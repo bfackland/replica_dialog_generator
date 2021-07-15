@@ -5,7 +5,7 @@ from dialog import Dialog, DIALOG_PATH
 import json
 
 
-REPLICA_API_CREDENTIALS_FILENAME = "./replica_api_credentials.json"
+REPLICA_API_CREDENTIALS_FILENAME = "./replica_dialog_generator/replica_api_credentials.json"
 
 
 def make_api_request(url, request_type='get', data={}, params={}, headers={}):
