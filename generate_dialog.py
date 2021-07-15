@@ -44,7 +44,8 @@ def get_access_token():
         replica_api_credentials = json.loads(rapifile.read())
 
     _, api_response_json = make_api_request(
-        "https://api.replicastudios.com/auth", request_type='post', data=replica_api_credentials,
+        "https://api.replicastudios.com/auth", request_type='post',
+        data=replica_api_credentials,
         )
 
     try:
@@ -62,7 +63,8 @@ def get_speech(access_token, text_key, text, voice_uid):
     if that's successful, we get back a download URL where we then fetch the
     speech file from, returning the binary data
     """
-    # TODO: could be looked up automatically by 'make_api_request' e.g. stored on a class
+    # TODO: could be looked up automatically by 'make_api_request'
+    # e.g. stored on a class
     headers = {
         'Authorization': f'Bearer {access_token}'
         }
@@ -73,7 +75,8 @@ def get_speech(access_token, text_key, text, voice_uid):
         }
 
     api_response_status_code, api_response_json = make_api_request(
-    "https://api.replicastudios.com/speech", request_type='get', params=params, headers=headers
+    "https://api.replicastudios.com/speech", request_type='get',
+    params=params, headers=headers
     )
 
     if api_response_status_code == 202:
