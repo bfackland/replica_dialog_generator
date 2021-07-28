@@ -192,7 +192,7 @@ push them to the GitHub repo:
 ```
 git add .
 git commit -m "fixed a bug"
-git push origin name-of-your-new-branch
+git push origin 123-name-of-your-new-branch
 ```
 
 4. open a Pull Request on GitHub for your new branch using the
