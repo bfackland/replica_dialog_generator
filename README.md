@@ -1,13 +1,12 @@
 # replica-dialog-generator
 
-Auto-generate dialog audio files using the Replica Studios 'AI Voices' API
---------------------------------------------------------------------------
+**Auto-generate dialog audio files using the Replica Studios 'AI Voices' API.**
 
 # What does this do? Why would you want to use it?
 
-**You want to generate audio files for the text dialog you are using in your
-creative chatbot project, so that your code can 'speak', in a 'realistic'
-voice, to the end-user.**
+You want to generate audio files for the text dialog you are using in your
+creative chatbot project, so that your code can 'speak', in a 'realistic',
+perhaps even unique voice, to the end-user.
 
 You can use this utility standalone, or within a Rasa project folder.
 
@@ -16,6 +15,7 @@ You can use this utility standalone, or within a Rasa project folder.
 To quote [their website](https://replicastudios.com):
 
 > AI voice actors for games + films
+
 > It all starts with a talented voice actor spending hours training our AI how
 > to perform.
 > Our AI model learns how to perform by copying the real voice actors unique
@@ -28,6 +28,7 @@ To quote [their website](https://rasa.com):
 
 > Rasa is the leading conversational AI platform, for personalized
 > conversations at scale.
+
 > Rasa Open Source is a framework for natural language understanding,
 > dialogue management, and integrations. Rasa X is a free toolset used to
 > improve virtual assistants built using Rasa Open Source. Together, they
@@ -109,7 +110,7 @@ source ./venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-# 4. Generate Audio using AI Voices
+# 4. Generate Audio using an AI Voice
 
 If you've made it this far you should now be able to run `generate_dialog.py`
 which will work through all the dialog in `./dialog/responses.yml` and attempt
