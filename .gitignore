@@ -1,2 +1,6 @@
 replica_api_credentials.json
 replica_config.json
+.DS_Store
+__pycache__/
+dialog/
+venv/
