@@ -1,4 +1,4 @@
-# replica-dialog-generator
+# replica_dialog_generator
 # Auto-generate dialog audio files using the Replica Studios 'AI Voices' API.
 #
 # Copyright (C) 2021 Ben Ackland (@bfackland)
