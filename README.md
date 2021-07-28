@@ -2,7 +2,7 @@
 
 **Auto-generate dialog audio files using the Replica Studios 'AI Voices' API.**
 
-# What does this do? Why would you want to use it?
+## What does this do? Why would you want to use it?
 
 You want to generate audio files for the text dialog you are using in your
 creative chatbot project, so that your code can 'speak', in a 'realistic',
@@ -10,7 +10,7 @@ perhaps even unique voice, to the end-user.
 
 You can use this utility standalone, or within a Rasa project folder.
 
-## What is Replica Studios?
+### What is Replica Studios?
 
 To quote [their website](https://replicastudios.com):
 
@@ -22,7 +22,7 @@ To quote [their website](https://replicastudios.com):
 > speech patterns, pronunciation, and emotional range.
 > The end result is an AI voice actor you can use in your games or films.
 
-## What is Rasa?
+### What is Rasa?
 
 To quote [their website](https://rasa.com):
 
@@ -35,7 +35,18 @@ To quote [their website](https://rasa.com):
 > include all the features to create powerful text- and voice-based assistants
 > and chatbots.
 
-# 1. Setup Replica Studios API
+## Licence
+
+This utility is distributed under GNU General Public License v3.0,
+which can be found in the file LICENCE.txt. In summary:
+
+> Permissions of this strong copyleft license are conditioned on making
+> available complete source code of licensed works and modifications,
+> which include larger works using a licensed work, under the same license.
+> Copyright and license notices must be preserved.
+> Contributors provide an express grant of patent rights.
+
+## Setup Replica Studios API
 
 First you'll need an account with Replica Studios. As of July 2021 you get
 30 minutes of free credit when you sign up. If you use the following referral
@@ -74,7 +85,7 @@ At the time of writing (July 2021) it only seems possible to obtain the UID
 by viewing the source of the Replica website Project page when selecting
 a voice.
 
-# 2. Prepare Your Dialog
+## Prepare Your Dialog
 
 You'll need a `dialog` folder and a `responses.yml` file in your current/project
 folder, defining the dialog to be generated:
@@ -98,7 +109,7 @@ responses:
   - text: "See you!"
 ```
 
-# 3. Configure Python Environment
+## Configure Python Environment
 
 Now create a Python
 [virtual environment](https://docs.python.org/3/library/venv.html) (venv) and
@@ -110,7 +121,7 @@ source ./venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-# 4. Generate Audio using an AI Voice
+## Generate Audio using an AI Voice
 
 If you've made it this far you should now be able to run `generate_dialog.py`
 which will work through all the dialog in `./dialog/responses.yml` and attempt
@@ -121,7 +132,7 @@ to generate OGG audio files for each (using the *first* voice you specify in
 python generate_dialog.py
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 Problem: `ModuleNotFoundError`, e.g. for 'requests':
 

@@ -1,3 +1,20 @@
+# replica-dialog-generator
+# Auto-generate dialog audio files using the Replica Studios 'AI Voices' API.
+#
+# Copyright (C) 2021 Ben Ackland (@bfackland)
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import requests
 import sys
 from loguru import logger
@@ -9,7 +26,7 @@ from os.path import exists
 REPLICA_API_CREDENTIALS_FILENAME = "./replica_api_credentials.json"
 if not exists(REPLICA_API_CREDENTIALS_FILENAME):
     REPLICA_API_CREDENTIALS_FILENAME = "./replica_dialog_generator/replica_api_credentials.json"
-    
+
 
 def make_api_request(url, request_type='get', data={}, params={}, headers={}):
     """
