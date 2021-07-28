@@ -195,7 +195,9 @@ git commit -m "fixed a bug"
 git push origin 123-name-of-your-new-branch
 ```
 
-4. open a Pull Request on GitHub for your new branch using the
+4. open a
+[Pull Request](https://github.com/spaceport-game/replica_dialog_generator/pulls)
+on GitHub for your new branch using the
 "New pull request" button; add in a title and a comment describing what you
 have done, then press the "Create pull request" button.
 
