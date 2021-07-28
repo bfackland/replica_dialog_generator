@@ -151,3 +151,52 @@ then (re-)activated your venv prior to running:
 source ./venv/bin/activate
 python generate_dialog.py
 ```
+
+Found a bug? Consider raising an Issue:
+
+1. check whether the same or similar issue has been reported under the
+GitHub
+[Issues](https://github.com/spaceport-game/replica_dialog_generator/issues)
+tab
+2. if not,
+[submit a new issue](https://github.com/spaceport-game/replica_dialog_generator/issues/new/choose)
+and label it with 'bug' or similar.
+
+This should notify contributors who can investigate and will typically respond
+on the issue, notifying you in the process.
+
+## Contribute
+
+If you would like to add a new feature or
+[fix an existing bug](https://github.com/spaceport-game/replica_dialog_generator/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+please feel free!
+
+Here's a summary of the process you should follow:
+
+1. ensure an Issue exists that describes what you will work on and why; if not,
+[submit a new issue](https://github.com/spaceport-game/replica_dialog_generator/issues/new/choose)
+and label it with 'bug' or similar;
+
+2. create a new branch of this repository (repo) which will contain the
+implementation of your contribution, with the issue number in the branch name,
+e.g.:
+
+`git checkout -b 123-name-of-your-new-branch`
+
+(where '123' is the issue number);
+
+3. once you are happy with the changes you made in your *local* codebase,
+push them to the GitHub repo:
+
+```
+git add .
+git commit -m "fixed a bug"
+git push origin name-of-your-new-branch
+```
+
+4. open a Pull Request on GitHub for your new branch using the
+"New pull request" button; add in a title and a comment describing what you
+have done, then press the "Create pull request" button.
+
+This should notify the project owner who can initiate a review and communicate
+with you via GitHub.
