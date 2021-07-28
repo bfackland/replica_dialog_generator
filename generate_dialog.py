@@ -3,10 +3,13 @@ import sys
 from loguru import logger
 from dialog import Dialog, DIALOG_PATH
 import json
+from os.path import exists
 
 
-REPLICA_API_CREDENTIALS_FILENAME = "./replica_dialog_generator/replica_api_credentials.json"
-
+REPLICA_API_CREDENTIALS_FILENAME = "./replica_api_credentials.json"
+if not exists(REPLICA_API_CREDENTIALS_FILENAME):
+    REPLICA_API_CREDENTIALS_FILENAME = "./replica_dialog_generator/replica_api_credentials.json"
+    
 
 def make_api_request(url, request_type='get', data={}, params={}, headers={}):
     """

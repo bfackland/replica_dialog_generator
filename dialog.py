@@ -3,11 +3,14 @@ import yaml
 import hashlib
 from os import listdir
 import json
+from os.path import exists
 
 
 DIALOG_PATH = "./dialog/"
 DIALOG_FILES = [ x for x in listdir(DIALOG_PATH) if x.lower().endswith('.ogg')]
-REPLICA_CONFIG_FILENAME = "./replica_dialog_generator/replica_config.json"
+REPLICA_CONFIG_FILENAME = "./replica_config.json"
+if not exists(REPLICA_CONFIG_FILENAME):
+    REPLICA_CONFIG_FILENAME = "./replica_dialog_generator/replica_config.json"
 
 
 class Dialog:
@@ -42,7 +45,7 @@ class Dialog:
         """
         responses = {}
         logger.info("Reading responses from disk...")
-        with open(f'{DIALOG_PATH}/responses.yml', 'r') as file:
+        with open(f'{DIALOG_PATH}responses.yml', 'r') as file:
             data = yaml.safe_load(file)
             if 'responses' in data.keys():
                 for k, v in data['responses'].items():
