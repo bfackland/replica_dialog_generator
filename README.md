@@ -1,6 +1,7 @@
 # replica_dialog_generator
 
-**Auto-generate dialog audio files using the Replica Studios 'AI Voices' API.**
+**Auto-generate dialog audio files using the Replica Studios 'AI Voices' API
+using Rasa's responses.yml file format.**
 
 ## What does this do? Why would you want to use it?
 
