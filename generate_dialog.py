@@ -119,7 +119,7 @@ def generate_dialog():
     count = 0
 
     for text_key, text in responses.items():
-        if text_key.startswith("PA_"): continue
+        if text_key.startswith("PA_") or text_key.startswith("CLERK_"): continue
         dialog_file = dialog.get_dialog_file_for_text(text)
         if not dialog_file:
             logger.info(f"""Generating dialog for text "{text}"...""")
