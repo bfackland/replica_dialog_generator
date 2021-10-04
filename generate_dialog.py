@@ -114,19 +114,32 @@ def get_speech(access_token, text_key, text, voice_uid):
 def generate_dialog():
     access_token = get_access_token()
     dialog = Dialog()
-    voice, voice_uid = list(dialog.replica_voice_uids.items())[0]
+    voices = dialog.replica_voice_uids
     responses = dialog.load_responses()
     count = 0
 
     for text_key, text in responses.items():
-        if text_key.startswith("PA_") or text_key.startswith("CLERK_"): continue
         dialog_file = dialog.get_dialog_file_for_text(text)
+
         if not dialog_file:
+            text_md5 = dialog.get_text_md5(text)
+
+            voice = None
+            if '_' in text_key:
+                prefix, suffix = text_key.split('_', 1)
+                if prefix in voices.keys():
+                    logger.info(f"Found matching voice from prefix {prefix}")
+                    voice = prefix
+                    voice_uid = voices[prefix]
+                    dialog_filename = f"{voice}_{suffix}_{text_md5}.ogg"
+            if not voice:
+                voice, voice_uid = list(voices.items())[0]
+                logger.info(f"Defaulting to first voice: {voice}")
+                dialog_filename = f"{voice}_{text_key}_{text_md5}.ogg"
+
             logger.info(f"""Generating dialog for text "{text}"...""")
             speech_data = get_speech(access_token, text_key, text, voice_uid)
             if speech_data:
-                text_md5 = dialog.get_text_md5(text)
-                dialog_filename = f"{voice}_{text_key}_{text_md5}.ogg"
                 with open(f"{DIALOG_PATH}/{dialog_filename}", 'wb') as f:
                     f.write(speech_data)
                     logger.info(f"Wrote {dialog_filename} to disk")
